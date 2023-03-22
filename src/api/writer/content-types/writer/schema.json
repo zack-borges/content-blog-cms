@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "posts",
+  "collectionName": "writers",
   "info": {
-    "singularName": "post",
-    "pluralName": "posts",
-    "displayName": "Article",
+    "singularName": "writer",
+    "pluralName": "writers",
+    "displayName": "Writer",
     "description": ""
   },
   "options": {
@@ -12,19 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid"
-    },
-    "content": {
-      "type": "richtext"
-    },
-    "description": {
-      "type": "string"
-    },
-    "image": {
+    "picture": {
       "type": "media",
       "multiple": true,
       "required": false,
@@ -34,6 +25,14 @@
         "videos",
         "audios"
       ]
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::post.post"
+    },
+    "email": {
+      "type": "string"
     }
   }
 }
